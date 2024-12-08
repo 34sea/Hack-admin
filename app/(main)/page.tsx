@@ -87,6 +87,14 @@ const Dashboard = () => {
             email: 'luisa.ferreira@email.com', 
             phone: '849012345', 
             status: 'Ativo' 
+        },
+        { 
+            id: 7, 
+            name: 'Antonio Joao', 
+            category: 'App', 
+            email: 'Antonio@email.com', 
+            phone: '849012345', 
+            status: 'Ativo' 
         }
     ];
     const [products, setProducts] = useState<Demo.Product[]>([]);
@@ -165,7 +173,8 @@ const Dashboard = () => {
         { id: 3, name: 'Carlos Mendes', category: 'App', email: 'carlos.mendes@email.com', phone: '845678901', status: 'Ativo' },
         { id: 4, name: 'Ana Lopes', category: 'App SMS', email: 'ana.lopes@email.com', phone: '846789012', status: 'Ativo' },
         { id: 5, name: 'Pedro Costa', category: 'App', email: 'pedro.costa@email.com', phone: '848901234', status: 'Inativo' },
-        { id: 6, name: 'Luisa Ferreira', category: 'App SMS', email: 'luisa.ferreira@email.com', phone: '849012345', status: 'Ativo' }
+        { id: 6, name: 'Luisa Ferreira', category: 'App SMS', email: 'luisa.ferreira@email.com', phone: '849012345', status: 'Ativo' },
+        { id: 7, name: 'Antonio Joao', category: 'App', email: 'antonio.joao@email.com', phone: '849012345', status: 'Ativo' }
     ];
 
     // Estado para os usuários e o filtro
@@ -214,7 +223,7 @@ const Dashboard = () => {
                 <div className="card mb-0">
                     <div className="flex justify-content-between mb-3">
                         <div>
-                            <span className="block text-500 font-medium mb-3">Usuarios do aplicativo</span>
+                            <span className="block text-500 font-medium mb-3">Usu. do aplicativo</span>
                             <div className="text-900 font-medium text-xl">152</div>
                         </div>
                         <div className="flex align-items-center justify-content-center bg-blue-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
@@ -222,7 +231,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <span className="text-green-500 font-medium">24 novos </span>
-                    <span className="text-500">Na ultima semana</span>
+                    <span className="text-500">na ult. sem.</span>
                 </div>
             </div>
             <div className="col-12 lg:col-6 xl:col-3">
@@ -259,7 +268,7 @@ const Dashboard = () => {
                 <div className="card mb-0">
                     <div className="flex justify-content-between mb-3">
                         <div>
-                            <span className="block text-500 font-medium mb-3">Usuarios da app sms</span>
+                            <span className="block text-500 font-medium mb-3">Usu. da app sms</span>
                             <div className="text-900 font-medium text-xl">15</div>
                         </div>
                         <div className="flex align-items-center justify-content-center bg-purple-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
@@ -289,15 +298,12 @@ const Dashboard = () => {
                 </span>
             </div>
 
-            {/* Tabela de Usuários */}
+
             <DataTable value={users} rows={5} paginator responsiveLayout="scroll">
-                {/* Coluna Nome */}
+
                 <Column field="name" header="Nome" sortable style={{ width: '50%' }} />
-
-                {/* Coluna Categoria */}
                 <Column field="category" header="Categoria" sortable style={{ width: '30%' }} />
-
-                {/* Botão para Ver Detalhes */}
+                <Column field="phone" header="Telefone" sortable style={{ width: '30%' }} />
                 <Column
                     header="Detalhes"
                     style={{ width: '20%' }}
@@ -309,6 +315,34 @@ const Dashboard = () => {
                                 alert(
                                     `Detalhes de ${data.name}:\nEmail: ${data.email}\nTelefone: ${data.phone}\nStatus: ${data.status}`
                                 )
+                                // <div style={{position: "absolute", top: "0px", left: "0px", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0)", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                                //     <table border={1} style={{borderCollapse: "collapse", backgroundColor: "white"}}>
+                                //         <thead>
+                                //             <th>
+                                //                 Nome
+                                //             </th>
+                                //             <th>
+                                //                 Email
+                                //             </th>
+                                //             <th>
+                                //                 Telefone
+                                //             </th>
+                        
+                                //         </thead>
+
+                                //         <tr>
+                                //             <td>
+                                //                 {data.name}
+                                //             </td>
+                                //             <td>
+                                //                 {data.email}
+                                //             </td>
+                                //             <td>
+                                //                 {data.phone}
+                                //             </td>
+                                //         </tr>
+                                //     </table>
+                                // </div>
                             }
                         />
                     )}
@@ -350,7 +384,7 @@ const Dashboard = () => {
                             </div>
                             <div className="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
                                 <div className="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" style={{ height: '8px' }}>
-                                    <div className="bg-cyan-500 h-full" style={{ width: '16%' }} />
+                                    <div className="bg-cyan-500 h-full" style={{ width: '16%', backgroundColor: "red" }} />
                                 </div>
                                 <span className="text-cyan-500 ml-3 font-medium">%16</span>
                             </div>

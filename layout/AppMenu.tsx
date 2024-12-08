@@ -58,7 +58,7 @@ const AppMenu = () => {
                 {
                     label: 'Comunidades',
                     icon: 'pi pi-fw pi-users',
-                    to: '/landing'
+                    to: '/pages/timeline'
                 },
                 // {
                 //     label: 'Auth',
@@ -96,11 +96,11 @@ const AppMenu = () => {
                 //     icon: 'pi pi-fw pi-exclamation-circle',
                 //     to: '/pages/notfound'
                 // },
-                // {
-                //     label: 'Empty',
-                //     icon: 'pi pi-fw pi-circle-off',
-                //     to: '/pages/empty'
-                // }
+                {
+                    label: 'Finança',
+                    icon: 'pi pi-wallet',
+                    to: '/pages/empty'
+                }
             ]
         },
         // {
